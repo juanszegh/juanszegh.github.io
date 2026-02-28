@@ -1,3 +1,13 @@
+:root
+{
+    --bg: #06032C;
+    --primary: #3B90FF;
+    --secondary: #21179E;
+    --secondary-fill: argb(33, 23, 158, 0.1);
+    --secondary-select: argb(33, 23, 158, 0.5);
+    --secondary-tag: argb(33, 23, 158, 0.5);
+}
+
 @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
 *
 {
@@ -7,7 +17,12 @@
 }
 body
 {
-    background-color: rgb(196, 216, 223);
+    background-color: #06032C;
+}
+#logo
+{
+    height: 40px;
+    width: 90px;
 }
 h2
 {
@@ -18,18 +33,19 @@ header
     background-color: white;
     display: flex;
     justify-content: space-between;
-    width: 100%;
+    width: 80%;
     position: fixed;
     top: 0;
     left: 0;
     padding: 0 10%;
+    height: 60px;
+    align-items: center;
 }
 select
 {
     padding: 8px 20px;
     border: 1px solid black;
     appearance: base-select;
-    margin-top: 5px;
     height: 40px;
     width: 150px;
     font-size: medium;
@@ -40,7 +56,7 @@ nav
 {
     display: flex;
     justify-content: end;
-    gap: 20%;
+    gap: 15%;
     width: 50%;
 }
 .mysql
