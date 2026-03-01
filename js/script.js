@@ -11,14 +11,17 @@ async function applyTranslation(selector, translation)
     nodes.forEach(n => {
         if (Array.isArray(translation))
         {
-            for (let i = 0; i < n.children.length; i++) {
+            for (let i = 0; i < translation.length; i++) {
                 n.children[i].innerText = translation[i]
             }
             return
         }
         else if (typeof translation === "string")
         {
-            node.innerText = translation
+            if (translation !== "*")
+            {
+                node.innerText = translation
+            }
             return
         }
         console.warn(`Invalid text format for selector '${selector}'`)

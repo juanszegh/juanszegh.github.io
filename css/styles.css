@@ -1,32 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
 :root
 {
     --bg: #06032C;
     --primary: #3B90FF;
     --secondary: #21179E;
-    --secondary-fill: argb(33, 23, 158, 0.1);
+    --secondary-hollow: argb(33, 23, 158, 0.1);
     --secondary-select: argb(33, 23, 158, 0.5);
     --secondary-tag: argb(33, 23, 158, 0.5);
 }
-
-@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
 *
 {
     font-family: "Lato", sans-serif;
     font-weight: 400;
     font-style: normal;
 }
+.imb-plex-sans
+{
+    font-family: "IBM Plex Sans", sans-serif;
+}
 body
 {
-    background-color: #06032C;
+    background-color: var(--bg);
 }
 #logo
 {
     height: 40px;
     width: 90px;
 }
+main
+{
+    width: 90%;
+    margin: auto;
+}
+hr
+{
+    border: none;
+    height: 1px;
+    background-color: var(--primary);
+}
+#hero
+{
+    padding-top: 120px;
+    margin-bottom: 260px;
+}
+#hero > h3
+{
+    margin-bottom: 50px;
+    max-width: 50vw;
+}
+#hero > div
+{
+    gap: 40px;
+}
+h1
+{
+    font-size: 84px;
+    font-weight: 500;
+    color: white;
+}
 h2
 {
+    font-size: 32px;
+    color:white;
+    font-weight: 300;
+}
+nav > h2
+{
     font-size: medium;
+}
+h3
+{
+    font-size: 24px;
+    color: white;
+    font-weight: 300;
+}
+.filled-button
+{
+    background-color: var(--primary);
+    color: black;
+    font-size: 20px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+}
+.filled-button > img
+{
+    position: relative;
+    top: 4px;
+    left: 2px;
+}
+.hollow-button
+{
+    background-color: transparent;
+    color: white;
+    font-size: 20px;
+    padding: 10px 20px;
+    border: 2px solid var(--primary);
+    cursor: pointer;
+    text-decoration: none;
+}
+.hollow-card
+{
+    background-color: var(--secondary-hollow);
+    border: 1px solid var(--primary);
+    padding: 20px;
+    border-radius: 5px;
+    color: white;
+}
+#about
+{
+    width: 90%;
+    margin: auto;
+}
+#about > h3
+{
+    text-align: center;    
 }
 header
 {
@@ -59,7 +149,7 @@ nav
     gap: 15%;
     width: 50%;
 }
-.mysql
+.flex
 {
-    background-image: url("../assets/icons/tech/mysql.svg");
+    display: flex;
 }
