@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio</title>
+    
     <link rel="stylesheet" href="css/styles.css"/>
 </head>
 <body>
@@ -24,7 +25,7 @@
     </header>
     <main>
         <div id="hero">
-            <h1 class="imb-plex-sans">Full-stack developer</h1>
+            <h1 class="ibm-plex-sans">Full-stack developer</h1>
             <h3>I build end-to-end web applications, prioritizing performance, clean architecture and stable, market-ready services.</h3>
             <div class="flex">
                 <a class="filled-button" href="#projects">My projects <img src="assets/icons/arrow_right.svg"></a>
@@ -35,9 +36,23 @@
         <section id="about">
             <h3>I'm Juan, a full-stack developer based in Brazil, i mainly resonate with backend development, but i have delivered consistent results working in the frontend before, my main goal in the IT field at the moment is to learn and gather more experience in real-life work enviroments.</h3>
             <div class="flex">
-
+                <div class="hollow-card" id="personal_card">
+                    <img src="assets/img/me.png">        
+                    <h4 class="ibm-plex-sans">Juan Ferreira</h4>
+                    <p><img src="assets/icons/location.svg" class="icon-medium">São Paulo, Brazil</p>
+                    <a class="filled-button ibm-plex-sans" rel="noopener noreferrer" href="https://linkedin.com/in/juan-ferreira-102060279" target="_blank">Let's connect</a>
+                </div>
+                <div id="tech_stack">
+                    <h4 class="ibm-plex-sans">My tech stack</h4>
+                    <p>The technologies i'm most proficient in and have experience with</p>
+                    <tech-stack></tech-stack>
+                </div>
             </div>
-        </section>    
+        </section>
+        <h2 class="ibm-plex-sans">Projects<hr></h2>
+        <section id="projects">
+            <div class="flex" id="projects_container">
+            </div>    
     </main>
     <script src="js/script.js" type="module" ></script>
 </body>

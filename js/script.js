@@ -1,4 +1,7 @@
 import { sleep, $, $$ } from "./util.js"
+import { TechStack } from "./components/TechStack.js"
+
+customElements.define("tech-stack", TechStack);
 
 async function applyTranslation(selector, translation)
 {
@@ -27,7 +30,6 @@ async function applyTranslation(selector, translation)
         console.warn(`Invalid text format for selector '${selector}'`)
     })
 }
-
 
 async function changeLanguage(language)
 {
@@ -59,10 +61,8 @@ async function changeLanguage(language)
     })
 }
 
-
 document.addEventListener("DOMContentLoaded", () => {
     $("#ddl_language").addEventListener("change", (e) => {
         changeLanguage(e.target.value)
     })
 });
-

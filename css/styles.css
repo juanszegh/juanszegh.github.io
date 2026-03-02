@@ -4,9 +4,9 @@
     --bg: #06032C;
     --primary: #3B90FF;
     --secondary: #21179E;
-    --secondary-hollow: argb(33, 23, 158, 0.1);
-    --secondary-select: argb(33, 23, 158, 0.5);
-    --secondary-tag: argb(33, 23, 158, 0.5);
+    --secondary-hollow: rgba(33, 23, 158, 0.1);
+    --secondary-select: rgba(33, 23, 158, 0.5);
+    --secondary-tag: rgba(33, 23, 158, 0.5);
 }
 *
 {
@@ -14,7 +14,7 @@
     font-weight: 400;
     font-style: normal;
 }
-.imb-plex-sans
+.ibm-plex-sans
 {
     font-family: "IBM Plex Sans", sans-serif;
 }
@@ -74,6 +74,10 @@ h3
     color: white;
     font-weight: 300;
 }
+.icon-medium
+{
+    width: 25px;
+}
 .filled-button
 {
     background-color: var(--primary);
@@ -109,6 +113,62 @@ h3
     border-radius: 5px;
     color: white;
 }
+#tech_items_container
+{
+    flex-direction: column;
+}
+#tech_stack
+{
+    width: 40%;
+    color: white;
+    height: 1000px;
+}
+#tech_stack > h4
+{
+    margin-bottom: 0;
+    font-size: 32px;
+}
+#tech_stack > p
+{
+    font-style: italic;
+    font-size: 16px;
+    font-weight: 300;
+}
+#personal_card > h4
+{
+    margin-top: 60px;
+    margin-bottom: 0;
+    font-size: 32px;
+}
+#personal_card > a
+{
+    margin-top: 30px;
+    width: 200px;
+    text-align: center;
+}
+#personal_card > p > img
+{
+    position: relative;
+    top: 6px;
+    left: -10px;
+}
+#personal_card
+{
+    width: 30%;
+    height: 550px;
+    border-radius: 5px;
+    display: flex;
+    padding: 40px 0 20px 0;
+    box-sizing: border-box;
+    flex-direction: column;
+    align-items: center;
+}
+#personal_card > img
+{
+    width: 225px;
+    height: 225px;
+    border-radius: 50%;
+}
 #about
 {
     width: 90%;
@@ -116,7 +176,13 @@ h3
 }
 #about > h3
 {
-    text-align: center;    
+    text-align: center;
+    margin-bottom: 100px;    
+}
+
+#about > div
+{
+    gap: 25%;
 }
 header
 {
@@ -152,4 +218,40 @@ nav
 .flex
 {
     display: flex;
+}
+#tech_items_container > div, .category-container > div
+{
+    gap: 20px;
+    flex-wrap: wrap;
+}
+.tech-item
+{
+    padding: 0 10px;
+}
+.tech-item > img
+{
+    margin-right: 10px;
+}
+.category-container > p
+{
+    cursor: pointer;
+    border-radius: 15px;
+    font-size: 18px;
+    padding: 8px 20px;
+}
+.category-container > h5
+{
+    font-size: 16px;
+}
+tech-stack > div
+{
+    gap: 15px;
+}
+tech-stack > div:first-child
+{
+    margin-bottom: 20px;
+}
+.active
+{
+    background-color: var(--secondary-select);
 }
