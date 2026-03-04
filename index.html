@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio</title>
-    
-    <link rel="stylesheet" href="css/styles.css"/>
+    <link rel="stylesheet" href="css/index.css"/>
+    <link rel="stylesheet" href="css/global.css"/>
 </head>
 <body>
     <header>
@@ -52,8 +52,56 @@
         <h2 class="ibm-plex-sans">Projects<hr></h2>
         <section id="projects">
             <div class="flex" id="projects_container">
-            </div>    
+                <project-card>
+                    <thumbnail>assets/img/projects/mapit.jpg</thumbnail>
+                    <name>MapIt</name>
+                    <description>Web application to guide and share personal studies through interactive roadmaps</description>
+                    <tech-list>
+                        <tech>ASP.NET</tech>
+                        <tech>HTML</tech>
+                        <tech>CSS</tech>
+                        <tech>JavaScript</tech>
+                        <tech>MySQL</tech>
+                        <tech>Cloudflare</tech>
+                    </tech-list>
+                </project-card>
+                <project-card></project-card>
+                <project-card></project-card>
+            </div>
+            <a rel="noopener noreferrer" href="https://github.com/juanszegh" target="_blank" id="github_link">See everything in detail on my Github <img class="icon-medium" src="assets/icons/github.svg"></a>
+        </section>
+        <h2 class="ibm-plex-sans">Contact<hr></h2>
+        <section id="contact" class="flex">
+            <div id="socials">
+                <div class="socials-button hollow-card flex">
+                    <img src="assets/icons/linkedin.svg" class="icon-large">
+                    <a rel="noopener noreferrer" href="https://linkedin.com/in/juan-ferreira-102060279" target="_blank">Juan Ferreira</a>        
+                </div>
+                <div class="socials-button hollow-card flex">
+                    <img src="assets/icons/github.svg" class="icon-large">
+                    <a rel="noopener noreferrer" href="https://github.com/juanszegh" target="_blank">juanszegh</a>        
+                </div>
+                <div class="socials-button hollow-card flex">
+                    <img src="assets/icons/email.svg" class="icon-large">
+                    <p>juanszegh@hotmail.com</p>        
+                </div>
+            </div>
+            <form id="contact_form" class="hollow-card">
+                <h3>Send me a message</h3>
+                <input type="text" name="subject" style="display:none" value="Form submission from portfolio" />
+                <input type="text" name="_gotcha" style="display:none" />
+                <input type="text" name="name" id="name" placeholder="Name" required>
+                <input type="email" name="email" id="email" placeholder="Email address" required>
+                <textarea name="message" id="message" placeholder="Your Message" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </section>
     </main>
+    <footer>
+        <h3>Made by Juan Ferreira</h3>
+        <p>I use Umami to track page visits, none of your personal data is collected</p>
+        <p>&copy; <script>document.write(new Date().getFullYear())</script> &nbsp; • &nbsp; All Rights Reserved</p>
+    </footer>
     <script src="js/script.js" type="module" ></script>
 </body>
 </html>

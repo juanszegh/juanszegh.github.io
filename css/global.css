@@ -1,0 +1,45 @@
+.ibm-plex-sans
+{
+    font-family: "IBM Plex Sans", sans-serif;
+}
+.flex
+{
+    display: flex;
+}
+.icon-medium
+{
+    width: 25px;
+}
+.icon-large
+{
+    width: 32px;
+}
+.hollow-button
+{
+    background-color: transparent;
+    color: white;
+    font-size: 20px;
+    padding: 10px 20px;
+    border: 2px solid var(--primary);
+    cursor: pointer;
+    text-decoration: none;
+}
+.hollow-card
+{
+    background-color: var(--secondary-hollow);
+    border: 1px solid var(--primary);
+    padding: 20px;
+    border-radius: 5px;
+    color: white;
+}
+.filled-button
+{
+    background-color: var(--primary);
+    color: black;
+    font-size: 20px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+}

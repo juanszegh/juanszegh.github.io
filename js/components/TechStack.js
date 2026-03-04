@@ -1,3 +1,9 @@
+const component_style = new CSSStyleSheet()
+const global_style = new CSSStyleSheet()
+
+fetch("css/components/TechStack.css").then(res => res.text()).then(css => component_style.replaceSync(css))
+fetch("css/global.css").then(res => res.text()).then(css => global_style.replaceSync(css))
+
 export class TechStack extends HTMLElement
 {
     categories = {
@@ -26,23 +32,26 @@ export class TechStack extends HTMLElement
     constructor()
     {
         super()
-        this.innerHTML = `
+        this.attachShadow({ mode: 'open' });
+        this.shadowRoot.adoptedStyleSheets = [component_style, global_style]
+
+        this.shadowRoot.innerHTML = `
         <div class="flex">
             ${Object.keys(this.categories).map(k => `<div class="category-container"><p category="${k}">${k}</p></div>`).join("")}    
         </div>
         <div class="flex" id="tech_items_container">        
         </div>`
-        this.querySelector("div.flex").addEventListener("click", (e) => {
+        this.shadowRoot.querySelector("div.flex").addEventListener("click", (e) => {
             const category = e.target.getAttribute("category")
             if (!category) return
 
-            const active_category = this.querySelector("p.active")
+            const active_category = this.shadowRoot.querySelector("p.active")
             if (active_category)
             {
                 active_category.classList.remove("active")
             }
             
-            const category_element = this.querySelector(`p[category="${category}"]`)
+            const category_element = this.shadowRoot.querySelector(`p[category="${category}"]`)
             category_element.classList.toggle("active")
             if (category === "All")
             {
@@ -53,12 +62,12 @@ export class TechStack extends HTMLElement
                 this.showCategory(this.categories[category])
             }
         })
-        this.querySelector("p[category='All']").classList.add("active")
+        this.shadowRoot.querySelector("p[category='All']").classList.add("active")
         this.showAllCategories()
     }
     showCategory(category)
     {
-        const container = this.querySelector("#tech_items_container")
+        const container = this.shadowRoot.querySelector("#tech_items_container")
         container.innerHTML = "<div class='flex'></div>"
         category.forEach(c => {
             container.firstChild.appendChild(c.getElement())
@@ -66,7 +75,7 @@ export class TechStack extends HTMLElement
     }
     showAllCategories()
     {
-        const container = this.querySelector("#tech_items_container")
+        const container = this.shadowRoot.querySelector("#tech_items_container")
         container.innerHTML = ""
         Object.keys(this.categories).forEach(category => {
             if (category === "All") return

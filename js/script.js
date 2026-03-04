@@ -1,7 +1,9 @@
 import { sleep, $, $$ } from "./util.js"
 import { TechStack } from "./components/TechStack.js"
+import { ProjectCard } from "./components/ProjectCard.js"
 
 customElements.define("tech-stack", TechStack);
+customElements.define("project-card", ProjectCard);
 
 async function applyTranslation(selector, translation)
 {
@@ -61,7 +63,41 @@ async function changeLanguage(language)
     })
 }
 
+async function formRequestHandler()
+{
+    const form = document.getElementById('contact_form');
+
+    form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+
+        const form_data = new FormData(form);
+
+        try 
+        {
+            const response = await fetch("https://formspree.io/f/xkovekzp", {
+                method: "POST",
+                body: form_data,
+                headers: { 'Accept': 'application/json'}
+            });
+            if (response.ok) 
+            {
+                form.reset();
+            } 
+            else 
+            {
+                // popup error message
+            }
+        } 
+        catch (error) 
+        {
+            // popup error message
+            console.error("Error submitting form:", error);
+        }
+    });
+}
+
 document.addEventListener("DOMContentLoaded", () => {
+    formRequestHandler()
     $("#ddl_language").addEventListener("change", (e) => {
         changeLanguage(e.target.value)
     })

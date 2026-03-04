@@ -6,7 +6,7 @@
     --secondary: #21179E;
     --secondary-hollow: rgba(33, 23, 158, 0.1);
     --secondary-select: rgba(33, 23, 158, 0.5);
-    --secondary-tag: rgba(33, 23, 158, 0.5);
+    --secondary-tag: rgba(33, 23, 158, 0.3);
 }
 *
 {
@@ -14,13 +14,10 @@
     font-weight: 400;
     font-style: normal;
 }
-.ibm-plex-sans
-{
-    font-family: "IBM Plex Sans", sans-serif;
-}
 body
 {
     background-color: var(--bg);
+    margin: 0;
 }
 #logo
 {
@@ -38,6 +35,21 @@ hr
     height: 1px;
     background-color: var(--primary);
 }
+#projects
+{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 30px;
+    min-height: 800px;
+}
+#projects_container
+{
+    display: flex;
+    gap: 3%;
+    width: 90%;
+}
 #hero
 {
     padding-top: 120px;
@@ -47,6 +59,7 @@ hr
 {
     margin-bottom: 50px;
     max-width: 50vw;
+    
 }
 #hero > div
 {
@@ -67,6 +80,8 @@ h2
 nav > h2
 {
     font-size: medium;
+    color: black;
+    font-weight: 400    ;
 }
 h3
 {
@@ -74,54 +89,17 @@ h3
     color: white;
     font-weight: 300;
 }
-.icon-medium
-{
-    width: 25px;
-}
-.filled-button
-{
-    background-color: var(--primary);
-    color: black;
-    font-size: 20px;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    text-decoration: none;
-}
 .filled-button > img
 {
     position: relative;
     top: 4px;
     left: 2px;
 }
-.hollow-button
-{
-    background-color: transparent;
-    color: white;
-    font-size: 20px;
-    padding: 10px 20px;
-    border: 2px solid var(--primary);
-    cursor: pointer;
-    text-decoration: none;
-}
-.hollow-card
-{
-    background-color: var(--secondary-hollow);
-    border: 1px solid var(--primary);
-    padding: 20px;
-    border-radius: 5px;
-    color: white;
-}
-#tech_items_container
-{
-    flex-direction: column;
-}
 #tech_stack
 {
-    width: 40%;
+    width: 50%;
     color: white;
-    height: 1000px;
+    min-height: 1000px;
 }
 #tech_stack > h4
 {
@@ -142,7 +120,7 @@ h3
 }
 #personal_card > a
 {
-    margin-top: 30px;
+    margin-top: 100px;
     width: 200px;
     text-align: center;
 }
@@ -155,7 +133,7 @@ h3
 #personal_card
 {
     width: 30%;
-    height: 550px;
+    height: 650px;
     border-radius: 5px;
     display: flex;
     padding: 40px 0 20px 0;
@@ -182,7 +160,7 @@ h3
 
 #about > div
 {
-    gap: 25%;
+    gap: 20%;
 }
 header
 {
@@ -196,6 +174,7 @@ header
     padding: 0 10%;
     height: 60px;
     align-items: center;
+    z-index: 5;
 }
 select
 {
@@ -215,43 +194,110 @@ nav
     gap: 15%;
     width: 50%;
 }
-.flex
+ 
+#contact
+{
+    min-height: 700px;
+}
+#github_link
+{
+    margin-top: 30px;
+    font-size: 18px;
+    color: white;
+    text-decoration: none;
+}
+#github_link > img
+{
+    position: relative;
+    top: 4px;
+    left: 6px;
+}
+.socials-button
+{
+    width: 250px;
+    display: flex;
+    align-items: center;
+}
+#contact
+{
+    padding-top: 40px;
+    justify-content: center;
+    gap: 10%;
+}
+#contact_form
 {
     display: flex;
-}
-#tech_items_container > div, .category-container > div
-{
+    flex-direction: column;
     gap: 20px;
-    flex-wrap: wrap;
+    width: 400px;
+    height: fit-content;
 }
-.tech-item
+
+#contact_form > h3
 {
-    padding: 0 10px;
+    font-weight: 500;
+    margin: 10px 0;
 }
-.tech-item > img
+input, textarea
 {
-    margin-right: 10px;
+    background-color: transparent;
+    border: 1px solid var(--primary);
+    border-radius: 5px;
+    padding: 10px;
+    color: white;
+    font-size: 14px;
 }
-.category-container > p
+textarea
 {
+    resize: none;
+    height: 150px;
+}
+button
+{
+    width: 100%;
+    background-color: var(--primary);
+    color: black;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
     cursor: pointer;
-    border-radius: 15px;
-    font-size: 18px;
-    padding: 8px 20px;
 }
-.category-container > h5
+footer
 {
-    font-size: 16px;
+    text-align: center;
+    padding: 20px 0;
+    border-top: 1px solid var(--primary);
 }
-tech-stack > div
+footer > h3, footer > p
 {
-    gap: 15px;
+    color: rgba(255, 255, 255, 0.6);
+    margin: 0;
+    font-weight: 400;
 }
-tech-stack > div:first-child
+footer > h3
 {
-    margin-bottom: 20px;
+    font-size: 12px;
 }
-.active
+footer > p
 {
-    background-color: var(--secondary-select);
+    font-size: 12px;
+    margin-top: 10px;
+}
+#socials
+{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+.socials-button > img
+{
+    margin-right: 20px;
+}
+.socials-button > p
+{
+    margin: 0;
+}
+.socials-button > a
+{
+    color: white;
 }

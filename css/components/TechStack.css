@@ -1,0 +1,45 @@
+#tech_items_container > div, .category-container > div
+{
+    gap: 20px;
+    flex-wrap: wrap;
+}
+#tech_items_container
+{
+    flex-direction: column;
+}
+.tech-item
+{
+    padding: 0 10px !important;
+}
+.tech-item > p
+{
+    font-size: 14px;
+    margin: 10px 0;
+}
+.tech-item > img
+{
+    margin-right: 10px;
+}
+.category-container > p
+{
+    cursor: pointer;
+    border-radius: 15px;
+    font-size: 14px;
+    padding: 8px 15px;
+}
+.category-container > h5
+{
+    font-size: 16px;
+}
+:host > div
+{
+    gap: 15px;
+}
+:host > div:first-child
+{
+    margin-bottom: 20px;
+}
+.active
+{
+    background-color: var(--secondary-select);
+}
