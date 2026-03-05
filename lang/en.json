@@ -1,3 +1,22 @@
 {
-    "nav": ["About me", "Projects", "Contact"]
+    "nav > a > h2*": ["About me", "Projects", "Contact"],
+    "#hero > h1" : "Full-stack developer",
+    "#hero > h3" : "I build end-to-end web applications, prioritizing performance, clean architecture and stable market-ready services.",
+    ".filled-button[href='#projects'] > span" : "My projects",
+    ".hollow-button[href='#contact']" : "Get in touch",
+    "h2 > span*" : ["About me", "Projects", "Contact"],
+    "#about > h3": "I'm Juan, a full-stack developer based in Brazil, i mainly resonate with backend development, but i have delivered consistent results working in the frontend before, my main goal in the IT field at the moment is to learn and gather more experience in real-life work enviroments.",
+    "#personal_card > a" : "Let's connect",
+    "#resume_button > span" : "View full resume",
+    "#tech_stack" : ["My tech stack", "The technologies i'm most proficient in and have experience with"],
+    "host:'project-card'.project-description*" : ["Web application to guide and share personal studies through interactive roadmaps","Node.js API for consulting medicine prices across multiple online pharmacies","Mobile app for reporting issues to the city government"],
+    "#github_link > span" : "See everything in detail on my Github",
+    "#contact_form > h3" : "Send me a message",
+    "#name/placeholder" : "Name",
+    "#email/placeholder" : "Email address",
+    "#message/placeholder" : "Your message",
+    "button" : "Send message",
+    "#sending_text" : "Sending message...",
+    "#success_text" : "Message sent successfully!",
+    "#error_text" : "An error occurred while submitting the form." 
 }

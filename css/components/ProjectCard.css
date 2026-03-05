@@ -40,18 +40,21 @@
 {
     display: flex;
     flex-direction: column;
-    padding: 0 20px 20px 20px;
-    position: relative;
-    bottom: 40px;
-    height: 160px;
-    justify-content: space-between;
+    padding: 20px;
+    height: 100px;
+    justify-content: flex-start;
+    gap: 10px;
+}
+#details_container > p
+{
+    min-height: 30px;
 }
 .tech-item
 {
     background-color: var(--secondary-tag);
     border: 1px solid var(--primary);
     border-radius: 5px;
-    padding:5px;
+    padding:4px 8px;
     min-width: 40px;
     text-align: center;
 }
@@ -62,7 +65,6 @@
 }
 p
 {
-
     margin-bottom: 5px;
     font-size: 12px;
 }
@@ -73,5 +75,6 @@ h3,p
 h3
 {
     position: relative;
-    top: 5px
+    bottom: 40px;
+    left: 5%;
 }

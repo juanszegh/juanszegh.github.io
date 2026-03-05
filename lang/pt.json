@@ -1,3 +1,22 @@
 {
-    "nav": ["Sobre mim", "Projetos", "Contato"]
+    "nav > a > h2*": ["Sobre mim", "Projetos", "Contato"],
+    "#hero > h1" : "Desenvolvedor full-stack",
+    "#hero > h3" : "Eu desenvolvo aplicações web end-to-end, priorizando performance, arquitetura limpa e serviços estáveis e prontos para o mercado.",
+    ".filled-button[href='#projects'] > span" : "Meus projetos",
+    ".hollow-button[href='#contact']" : "Entre em contato",
+    "h2 > span*" : ["Sobre mim", "Projetos", "Contato"],
+    "#about > h3": "Meu nome é Juan, eu sou um desenvolvedor full-stack morando no Brazil, eu me identifico mais com o backend mas também tenho um histórico com frontend, meu objetivo no momento é aprender e conseguir mais experiência em ambientes de trabalho reais.",
+    "#personal_card > a" : "Me siga",
+    "#resume_button > span" : "Currículo completo",
+    "#tech_stack" : ["Minha tech stack", "As tecnologias que eu mais estou acustumado e que tenho experiência"],
+    "host:'project-card'.project-description*" : ["Plataforma para organizar e compartilhas estudos usando roadmaps interativos","API em Node para consultar preços de remédios em diferentes farmácias online","Aplicativo para cidadãos reportarem problemas para a prefeitura local"],
+    "#github_link > span" : "Veja tudo em detalhes no meu Github",
+    "#contact_form > h3" : "Me mande uma mensagem",
+    "#name/placeholder" : "Nome",
+    "#email/placeholder" : "Endereço de email",
+    "#message/placeholder" : "Sua mensagem",
+    "button" : "Enviar mensagem",
+    "#sending_text" : "Enviando mensagem...",
+    "#success_text" : "Mensagem enviada com sucesso!",
+    "#error_text" : "Ocorreu um erro ao enviar sua mensagem." 
 }

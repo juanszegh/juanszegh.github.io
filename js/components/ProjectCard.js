@@ -29,25 +29,26 @@ export class ProjectCard extends HTMLElement {
         thumbnail.src = path
         thumbnail_wrapper.appendChild(thumbnail)
 
-        this.shadowRoot.appendChild(thumbnail_wrapper)
-
         // Container
 
         const details_container = document.createElement("div")
         details_container.id = "details_container"
-        this.shadowRoot.appendChild(details_container)
 
         // Name
         const title = this.querySelector("name").textContent
         const title_element = document.createElement("h3")
         title_element.textContent = title
-        this.shadowRoot.querySelector("#details_container").appendChild(title_element)
+        thumbnail_wrapper.appendChild(title_element)
 
         // Description
         const description = this.querySelector("description").textContent
         const description_element = document.createElement("p")
+        description_element.className = "project-description"
         description_element.textContent = description
-        this.shadowRoot.querySelector("#details_container").appendChild(description_element)
+        details_container.appendChild(description_element)
+
+        this.shadowRoot.appendChild(thumbnail_wrapper)
+        this.shadowRoot.appendChild(details_container)
     }
     renderTechs()
     {

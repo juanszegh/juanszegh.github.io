@@ -7,6 +7,8 @@
     --secondary-hollow: rgba(33, 23, 158, 0.1);
     --secondary-select: rgba(33, 23, 158, 0.5);
     --secondary-tag: rgba(33, 23, 158, 0.3);
+    --success: #2eaf2e; 
+    --error: #b32e2e;
 }
 *
 {
@@ -42,7 +44,7 @@ hr
     align-items: center;
     flex-direction: column;
     padding-top: 30px;
-    min-height: 800px;
+    min-height: 600px;
 }
 #projects_container
 {
@@ -71,14 +73,16 @@ h1
     font-weight: 500;
     color: white;
 }
-h2
+h2 > span
 {
     font-size: 32px;
     color:white;
     font-weight: 300;
 }
-nav > h2
+nav > a
 {
+    text-decoration: none;
+    font-size: 12px !important;
     font-size: medium;
     color: black;
     font-weight: 400    ;
@@ -130,13 +134,20 @@ h3
     top: 6px;
     left: -10px;
 }
+#about > div > div:first-child
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 30%;
+    padding: 40px 0 20px 0;
+}
 #personal_card
 {
-    width: 30%;
+    width: 100%;
     height: 650px;
     border-radius: 5px;
     display: flex;
-    padding: 40px 0 20px 0;
     box-sizing: border-box;
     flex-direction: column;
     align-items: center;
@@ -157,9 +168,22 @@ h3
     text-align: center;
     margin-bottom: 100px;    
 }
-
+#resume_button
+{
+    width: 80%;
+    text-align: center;
+    margin-top: 50px;
+    display: block;
+}
+#resume_button > img
+{
+    position: relative;
+    top: 4px;
+    margin-left: 10px;
+}
 #about > div
 {
+    flex-wrap: wrap;
     gap: 20%;
 }
 header
@@ -201,13 +225,13 @@ nav
 }
 #github_link
 {
-    margin-top: 30px;
+    margin-top: 200px;
     font-size: 18px;
     color: white;
-    text-decoration: none;
 }
 #github_link > img
 {
+
     position: relative;
     top: 4px;
     left: 6px;

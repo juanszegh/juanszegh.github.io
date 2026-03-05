@@ -1,4 +1,4 @@
-import { sleep, $, $$ } from "./util.js"
+import { sleep, $, $$, popupInfo } from "./util.js"
 import { TechStack } from "./components/TechStack.js"
 import { ProjectCard } from "./components/ProjectCard.js"
 
@@ -7,26 +7,78 @@ customElements.define("project-card", ProjectCard);
 
 async function applyTranslation(selector, translation)
 {
-    const nodes = $$(selector);
+    let nodes;
+    let multiple = false
+    let attribute = ""
+    if (selector.endsWith("*"))
+    {
+        selector = selector.slice(0, -1)
+        multiple = true
+    }
+    if (selector.includes("/"))
+    {
+        const parts = selector.split("/")
+        attribute = parts[1]
+        selector = parts[0]
+    }
+
+    if (selector.startsWith("host:"))
+    {
+        const match = selector.match(/host:'(.*?)'/);
+        const host_root = document.querySelector(match[1]).shadowRoot   
+        selector = selector.replace(/host:'(.*?)'/, "").trim()
+        nodes = host_root.querySelectorAll(selector) 
+    }
+    else
+    {
+        nodes = $$(selector);    
+    }
     if (nodes.length === 0) 
     {
         console.warn(`No node with selector '${selector}' was found`)
+        return
+    }
+    if (multiple && Array.isArray(translation))
+    {
+        for (let i = 0; i < nodes.length; i++) {
+            if (attribute)
+            {
+                nodes[i].setAttribute(attribute, translation[i])    
+            }
+            else
+            {
+                nodes[i].innerText = translation[i]
+            }
+        }    
         return
     }
     nodes.forEach(n => {
         if (Array.isArray(translation))
         {
             for (let i = 0; i < translation.length; i++) {
-                n.children[i].innerText = translation[i]
+                if (attribute)
+                {
+                    n.children[i].setAttribute(attribute, translation[i])    
+                }
+                else
+                {
+                    n.children[i].innerText = translation[i]
+                }    
             }
             return
         }
         else if (typeof translation === "string")
         {
-            if (translation !== "*")
+            if (translation == "*") return;
+
+            if (attribute)
             {
-                node.innerText = translation
+                n.setAttribute(attribute, translation)
             }
+            else 
+            {
+                n.innerText = translation
+            }   
             return
         }
         console.warn(`Invalid text format for selector '${selector}'`)
@@ -71,7 +123,11 @@ async function formRequestHandler()
         e.preventDefault();
 
         const form_data = new FormData(form);
+        form.querySelectorAll("input, textarea, button").forEach(input => input.disabled = true)
+        form.querySelector("button").innerText = document.getElementById("sending_text").innerText
 
+        const success_message = document.getElementById("success_message").innerText
+        const error_message = document.getElementById("error_message").innerText
         try 
         {
             const response = await fetch("https://formspree.io/f/xkovekzp", {
@@ -82,15 +138,17 @@ async function formRequestHandler()
             if (response.ok) 
             {
                 form.reset();
+                popupInfo(success_message, 3000, "success", {"position": "bottom-right"})
             } 
             else 
             {
-                // popup error message
+                popupInfo(error_message, 5000, "error", {"position": "bottom-right"})
             }
+            form.querySelector("button").innerText = "Send Message"
         } 
         catch (error) 
         {
-            // popup error message
+            popupInfo(error_message, 5000, "error", {"position": "bottom-right"})
             console.error("Error submitting form:", error);
         }
     });

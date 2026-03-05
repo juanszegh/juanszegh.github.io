@@ -13,9 +13,9 @@
             <img src="assets/img/logo.png" alt="logo" id="logo"/>
         </div>
         <nav>
-            <h2>About me</h2>
-            <h2>Projects</h2>
-            <h2>Contact</h2>
+            <a href="#about"><h2>About me</h2></a>
+            <a href="#projects"><h2>Projects</h2></a>
+            <a href="#contact"><h2>Contact</h2></a>
         </nav>
         </div>
         <select id="ddl_language">
@@ -26,21 +26,24 @@
     <main>
         <div id="hero">
             <h1 class="ibm-plex-sans">Full-stack developer</h1>
-            <h3>I build end-to-end web applications, prioritizing performance, clean architecture and stable, market-ready services.</h3>
+            <h3>I build end-to-end web applications, prioritizing performance, clean architecture and stable market-ready services.</h3>
             <div class="flex">
-                <a class="filled-button" href="#projects">My projects <img src="assets/icons/arrow_right.svg"></a>
+                <a class="filled-button" href="#projects"><span>My projects</span> <img src="assets/icons/arrow_right.svg"></a>
                 <a class="hollow-button" href="#contact">Get in touch</a>
             </div>
         </div>
-        <h2 class="ibm-plex-sans">About me<hr></h2>
+        <h2><span  class="ibm-plex-sans">About me</span><hr></h2>
         <section id="about">
             <h3>I'm Juan, a full-stack developer based in Brazil, i mainly resonate with backend development, but i have delivered consistent results working in the frontend before, my main goal in the IT field at the moment is to learn and gather more experience in real-life work enviroments.</h3>
             <div class="flex">
-                <div class="hollow-card" id="personal_card">
-                    <img src="assets/img/me.png">        
-                    <h4 class="ibm-plex-sans">Juan Ferreira</h4>
-                    <p><img src="assets/icons/location.svg" class="icon-medium">São Paulo, Brazil</p>
-                    <a class="filled-button ibm-plex-sans" rel="noopener noreferrer" href="https://linkedin.com/in/juan-ferreira-102060279" target="_blank">Let's connect</a>
+                <div>
+                    <div class="hollow-card" id="personal_card">
+                        <img src="assets/img/me.png">        
+                        <h4 class="ibm-plex-sans">Juan Ferreira</h4>
+                        <p><img src="assets/icons/location.svg" class="icon-medium">São Paulo, Brazil</p>
+                        <a class="filled-button ibm-plex-sans" rel="noopener noreferrer" href="https://linkedin.com/in/juan-ferreira-102060279" target="_blank">Let's connect</a>
+                    </div>
+                    <a href="assets/Resume.pdf" target="_blank" class="hollow-button" id="resume_button"><span class="ibm-plex-sans">View full resume</span> <img src="assets/icons/export.svg" class="icon-medium"></a> 
                 </div>
                 <div id="tech_stack">
                     <h4 class="ibm-plex-sans">My tech stack</h4>
@@ -49,7 +52,7 @@
                 </div>
             </div>
         </section>
-        <h2 class="ibm-plex-sans">Projects<hr></h2>
+        <h2><span class="ibm-plex-sans">Projects</span><hr></h2>
         <section id="projects">
             <div class="flex" id="projects_container">
                 <project-card>
@@ -65,12 +68,34 @@
                         <tech>Cloudflare</tech>
                     </tech-list>
                 </project-card>
-                <project-card></project-card>
-                <project-card></project-card>
+                <project-card>
+                    <thumbnail>assets/img/projects/farmafacil.png</thumbnail>
+                    <name>Farma Fácil</name>
+                    <description>Node.js API for consulting medicine prices across multiple online pharmacies</description>
+                    <tech-list>
+                        <tech>Node.js</tech>
+                        <tech>SQLite</tech>
+                        <tech>Express</tech>
+                        <tech>JWT</tech>
+                    </tech-list>
+                </project-card>
+                <project-card>
+                    <thumbnail>assets/img/projects/aloprefeitura.png</thumbnail>
+                    <name>Alô Prefeitura</name>
+                    <description>Mobile app for reporting issues to the city government</description>
+                    <tech-list>
+                        <tech>Node.js</tech>
+                        <tech>Express</tech>
+                        <tech>MySQL</tech>
+                        <tech>Cloudflare</tech>
+                        <tech>Ionic</tech>
+                        <tech>React</tech>
+                    </tech-list>
+                </project-card>
             </div>
-            <a rel="noopener noreferrer" href="https://github.com/juanszegh" target="_blank" id="github_link">See everything in detail on my Github <img class="icon-medium" src="assets/icons/github.svg"></a>
+            <a rel="noopener noreferrer" href="https://github.com/juanszegh" target="_blank" id="github_link"><span>See everything in detail on my Github</span> <img class="icon-medium" src="assets/icons/export.svg"></a>
         </section>
-        <h2 class="ibm-plex-sans">Contact<hr></h2>
+        <h2 ><span class="ibm-plex-sans">Contact</span><hr></h2>
         <section id="contact" class="flex">
             <div id="socials">
                 <div class="socials-button hollow-card flex">
@@ -90,11 +115,14 @@
                 <h3>Send me a message</h3>
                 <input type="text" name="subject" style="display:none" value="Form submission from portfolio" />
                 <input type="text" name="_gotcha" style="display:none" />
-                <input type="text" name="name" id="name" placeholder="Name" required>
-                <input type="email" name="email" id="email" placeholder="Email address" required>
-                <textarea name="message" id="message" placeholder="Your Message" required></textarea>
-                <button type="submit">Send Message</button>
+                <input type="text" required name="name" id="name" placeholder="Name" required>
+                <input type="email" required name="email" id="email" placeholder="Email address" required>
+                <textarea name="message" required id="message" placeholder="Your Message" required></textarea>
+                <button type="submit">Send message</button>
             </form>
+            <p style="display:none" id="sending_text">Sending message...</p>
+            <p style="display:none" id="success_message">Message sent successfully!</p>
+            <p style="display:none" id="error_message">An error occurred while submitting the form.</p>
         </section>
     </main>
     <footer>
