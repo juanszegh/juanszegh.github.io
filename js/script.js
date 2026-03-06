@@ -25,9 +25,9 @@ async function applyTranslation(selector, translation)
     if (selector.startsWith("host:"))
     {
         const match = selector.match(/host:'(.*?)'/);
-        const host_root = document.querySelector(match[1]).shadowRoot   
+        const host_roots = Array.from(document.querySelectorAll(match[1])).map(n => n.shadowRoot)
         selector = selector.replace(/host:'(.*?)'/, "").trim()
-        nodes = host_root.querySelectorAll(selector) 
+        nodes = host_roots.map(root => Array.from(root.querySelectorAll(selector))).flat()
     }
     else
     {
@@ -126,8 +126,8 @@ async function formRequestHandler()
         form.querySelectorAll("input, textarea, button").forEach(input => input.disabled = true)
         form.querySelector("button").innerText = document.getElementById("sending_text").innerText
 
-        const success_message = document.getElementById("success_message").innerText
-        const error_message = document.getElementById("error_message").innerText
+        const success_message = document.getElementById("success_text").innerText
+        const error_message = document.getElementById("error_text").innerText
         try 
         {
             const response = await fetch("https://formspree.io/f/xkovekzp", {

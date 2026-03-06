@@ -1,14 +1,16 @@
 const component_style = new CSSStyleSheet()
 const global_style = new CSSStyleSheet()
+const media_query_style = new CSSStyleSheet()
 
 fetch("css/components/ProjectCard.css").then(res => res.text()).then(css => component_style.replaceSync(css))
 fetch("css/global.css").then(res => res.text()).then(css => global_style.replaceSync(css))
+fetch("css/media_query.css").then(res => res.text()).then(css => media_query_style.replaceSync(css))
 
 export class ProjectCard extends HTMLElement {
     constructor() {
         super();
         this.attachShadow({ mode: 'open' });
-        this.shadowRoot.adoptedStyleSheets = [component_style, global_style]
+        this.shadowRoot.adoptedStyleSheets = [component_style, global_style, media_query_style]
         this.classList.add("hollow-card")
         this.renderDetails()
         this.renderTechs()

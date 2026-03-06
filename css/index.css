@@ -7,8 +7,12 @@
     --secondary-hollow: rgba(33, 23, 158, 0.1);
     --secondary-select: rgba(33, 23, 158, 0.5);
     --secondary-tag: rgba(33, 23, 158, 0.3);
+    --input-bg: rgba(33, 23, 158, 0.2);
     --success: #2eaf2e; 
     --error: #b32e2e;
+}
+html {
+  scroll-behavior: smooth;
 }
 *
 {
@@ -51,6 +55,7 @@ hr
     display: flex;
     gap: 3%;
     width: 90%;
+    flex-wrap: wrap;
 }
 #hero
 {
@@ -79,14 +84,7 @@ h2 > span
     color:white;
     font-weight: 300;
 }
-nav > a
-{
-    text-decoration: none;
-    font-size: 12px !important;
-    font-size: medium;
-    color: black;
-    font-weight: 400    ;
-}
+
 h3
 {
     font-size: 24px;
@@ -155,7 +153,6 @@ h3
 #personal_card > img
 {
     width: 225px;
-    height: 225px;
     border-radius: 50%;
 }
 #about
@@ -218,7 +215,13 @@ nav
     gap: 15%;
     width: 50%;
 }
- 
+nav > a
+{
+    text-decoration: none;
+    font-size: 12px;
+    color: black;
+    font-weight: 400    ;
+}
 #contact
 {
     min-height: 700px;
@@ -226,6 +229,7 @@ nav
 #github_link
 {
     margin-top: 200px;
+    margin-bottom: 100px;
     font-size: 18px;
     color: white;
 }
@@ -264,7 +268,7 @@ nav
 }
 input, textarea
 {
-    background-color: transparent;
+    background-color: var(--input-bg);
     border: 1px solid var(--primary);
     border-radius: 5px;
     padding: 10px;

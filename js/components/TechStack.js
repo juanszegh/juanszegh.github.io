@@ -1,8 +1,10 @@
 const component_style = new CSSStyleSheet()
 const global_style = new CSSStyleSheet()
+const media_query_style = new CSSStyleSheet()
 
 fetch("css/components/TechStack.css").then(res => res.text()).then(css => component_style.replaceSync(css))
 fetch("css/global.css").then(res => res.text()).then(css => global_style.replaceSync(css))
+fetch("css/media_query.css").then(res => res.text()).then(css => media_query_style.replaceSync(css))
 
 export class TechStack extends HTMLElement
 {
@@ -33,7 +35,7 @@ export class TechStack extends HTMLElement
     {
         super()
         this.attachShadow({ mode: 'open' });
-        this.shadowRoot.adoptedStyleSheets = [component_style, global_style]
+        this.shadowRoot.adoptedStyleSheets = [component_style, global_style, media_query_style]
 
         this.shadowRoot.innerHTML = `
         <div class="flex">

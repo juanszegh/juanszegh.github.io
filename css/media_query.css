@@ -1,0 +1,158 @@
+@media only screen and (max-width: 1024px) {
+    header 
+    {
+        width: 90%;
+        padding: 0 5%;
+    }
+    :host(tech-stack) > div:first-child
+    {
+        gap: 10px;
+    }
+    #projects_container
+    {
+        gap: 30px;
+    }
+    #personal_card > a
+    {
+        width: 150px;
+        margin-top: 50px;
+    }
+    #personal_card 
+    {
+        height: auto;
+    }
+    #github_link
+    {
+        margin-top: 150px;
+    }
+}
+
+@media only screen and (min-width: 320px) and (max-width: 767px) {
+    nav
+    {
+        display: none;
+    }
+    #ddl_language
+    {
+        display: auto;
+    }
+    #about > div > div
+    {
+        width: 90% !important;
+    }
+    #about > div
+    {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    :host(tech-stack) > div:first-child
+    {
+        flex-wrap: wrap;
+    }
+    .category-container > p
+    {
+        border: 1px solid var(--primary);
+    }
+    #about
+    {
+        margin-bottom: 30px;
+    }
+    :host(project-card)
+    {
+        width: 300px;
+    }
+    h1
+    {
+        font-size: 48px;
+    }
+    #hero > h3
+    {
+        font-size: 18px;
+        max-width: 100%;
+    }
+    #hero > div
+    {
+        flex-direction: column;
+    }
+    #hero
+    {
+        padding-top: 80px;
+        margin-bottom: 150px;
+    }
+    #hero > div > a
+    {
+        text-align: center;
+        width: 80%;
+    }
+    #about > h3
+    {
+        font-size: 18px;
+        text-align: start;
+        margin-bottom: 20px;
+    }
+    #personal_card > h4
+    {
+        margin-top: 30px;
+    }
+    #personal_card > a 
+    {
+        margin-bottom: 20px;
+        margin-top: 30px;
+    }
+    #contact
+    {
+        flex-direction: column;
+        align-items: center;
+        padding-top: 20px;
+        gap: 40px;
+        margin-bottom: 40px;
+    }
+    #contact_form
+    {
+        width: 300px
+    }
+    #projects_container
+    {
+        justify-content: center;
+    }
+}
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+    #hero > h3 {
+        max-width: 100%;
+    }
+    #personal_card > img
+    {
+        width: 150px;
+    }
+    #personal_card > h4
+    {
+        font-size: 24px;
+    }   
+
+    #personal_card > a
+    {
+        width: 150px;
+        margin-top: 50px;
+    }
+    #resume_button
+    {
+        font-size: 16px;
+    }
+    #resume_button
+    {
+        line-height: 30px;
+    }
+    .category-container > p
+    {
+        font-size: 12px;
+    }
+    #about > h3
+    {
+        font-size: 20px;
+        margin-bottom: 60px;
+    }
+    :host(project-card)
+    {
+        width: 350px;
+    }
+}
