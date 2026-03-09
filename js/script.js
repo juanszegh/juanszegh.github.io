@@ -9,7 +9,13 @@ async function applyTranslation(selector, translation)
 {
     let nodes;
     let multiple = false
+    let pureHTML = false
     let attribute = ""
+    if (selector.endsWith("%"))
+    {
+        selector = selector.slice(0, -1)
+        pureHTML = true
+    }
     if (selector.endsWith("*"))
     {
         selector = selector.slice(0, -1)
@@ -47,7 +53,14 @@ async function applyTranslation(selector, translation)
             }
             else
             {
-                nodes[i].innerText = translation[i]
+                if (!pureHTML) 
+                {
+                    nodes[i].innerText = translation[i]
+                }
+                else
+                {
+                    nodes[i].innerHTML = translation[i]
+                }
             }
         }    
         return
@@ -62,7 +75,14 @@ async function applyTranslation(selector, translation)
                 }
                 else
                 {
-                    n.children[i].innerText = translation[i]
+                    if (!pureHTML) 
+                    {
+                        n.children[i].innerText = translation[i]
+                    }
+                    else
+                    {
+                        n.children[i].innerHTML = translation[i]
+                    }
                 }    
             }
             return
@@ -77,7 +97,14 @@ async function applyTranslation(selector, translation)
             }
             else 
             {
-                n.innerText = translation
+                if (!pureHTML) 
+                {
+                    n.innerText = translation
+                }
+                else
+                {
+                    n.innerHTML = translation
+                }
             }   
             return
         }

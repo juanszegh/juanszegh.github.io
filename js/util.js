@@ -42,3 +42,7 @@ export async function popupInfo(message, timeout = 3000, type = "info", options 
     await sleep(timeout);
     popup.remove();
 }
+export function markdownToHTML(md)
+{
+    
+}
