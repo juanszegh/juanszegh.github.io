@@ -5,6 +5,7 @@
     border-radius: 15px !important;
     display: block;
     padding: 0 !important;
+    cursor: pointer;
 }
 #thumbnail_wrapper >  img
 {
