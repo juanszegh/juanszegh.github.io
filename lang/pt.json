@@ -8,7 +8,7 @@
     "#about > h3": "Meu nome é Juan e sou um desenvolvedor full-stack morando no Brasil. Me identifico mais com o backend, mas também tenho um histórico com frontend. Meu objetivo no momento é aprender e conseguir mais experiência em ambientes de trabalho reais.",
     "#personal_card > a" : "Conecte comigo",
     "#resume_button > span" : "Currículo completo",
-    "#tech_stack" : ["Minha tech stack", "As tecnologias que eu mais estou acustumado e que tenho experiência"],
+    "#tech_stack" : ["Minha tech stack", "As tecnologias que eu mais estou acostumado e que tenho experiência"],
     "host:'project-card'.project-description*" : ["Plataforma para organizar e compartilhas estudos usando roadmaps interativos","API em Node para consultar preços de remédios em diferentes farmácias online","Aplicativo para cidadãos reportarem problemas para a prefeitura local"],
     "host:'project-card'.details-popup > .project_concept*" : [
         "Desenvolvido como um projeto de grupo no ensino médio, o MapIt nasceu de um problema que enfrentávamos constantemente como estudantes: a organização de materiais de estudo. Percebemos que os métodos tradicionais eram frequentemente complexos de manter e revisar. Queríamos uma forma flexível e intuitiva para que qualquer pessoa pudesse criar e compartilhar sua jornada de aprendizado. Foi assim que adotamos um formato já popular no ambiente profissional, mas pouco explorado no cenário educacional: os Roadmaps.",
